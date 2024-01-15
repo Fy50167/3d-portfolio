@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import Error from './pages/Error';
 import Home from './pages/Home';
+import Contact from './pages/Contact';
+import Projects from './pages/Projects';
 
 
 const router = createBrowserRouter([
@@ -15,6 +17,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
+      },
+      {
+        index: '/contact',
+        element: <Contact />
+      },
+      {
+        index: '/projects',
+        element: <Projects />
       }
     ],
   },

@@ -1,9 +1,11 @@
 export default function Home() {
     return (
         <>
-            <div className = 'text-red-800'>
-                Welcome to the home!
-            </div>
+            <section classname = 'w-full h-screen relative'>
+                <div classname = 'absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
+                    Hi! This is my site!
+                </div>
+            </section>
         </>
     )
 }
