@@ -1,9 +1,13 @@
+import { Html } from 'react-three/drei';
+
 export default function Loader() {
     return (
-        <>
-            <div>
-                Loading...
+        <Html>
+            <div classname = 'flex justify-center items-center'>
+                <div classname = 'w-20 h-20 border-2 border-opacity-20 border-blue-500 border-t-blue-500 rounded-full animate-spin'>
+
+                </div>
             </div>
-        </>
+        </Html>
     )
 }
