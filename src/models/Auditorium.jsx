@@ -5,13 +5,14 @@ import auditoriumScene from '../assets/3d/auditorium.glb';
 import { a } from '@react-spring/three';
 
 export default function Auditorium() {
+    const auditoriumRef = useRef();
     const { nodes, materials } = useGLTF(
         "/Concert_Hall__Amphitheater_VR_Nov.glb"
     );
     
     return (
         
-        <a.group {...props} dispose={null}>
+        <a.group ref = {auditoriumRef} {...props} dispose={null}>
         <group scale={100}>
             <group rotation={[-Math.PI / 2, 0, 0]} scale={0.128}>
             <group rotation={[Math.PI / 2, 0, 0]}>
@@ -269,8 +270,6 @@ export default function Auditorium() {
             </group>
             </group>
         </group>
-        </group>
-
-        useGLTF.preload("/Concert_Hall__Amphitheater_VR_Nov.glb");
+        </a.group>
     )
 }

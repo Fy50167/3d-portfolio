@@ -1,5 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
+import { Auditorium } from '../models/Auditorium';
 
 export default function Home() {
     return (
@@ -18,6 +19,8 @@ export default function Home() {
                     <pointLight />
                     <spotLight />
                     <hemisphereLight />
+
+                    <Auditorium />
                 </Suspense>
 
             </Canvas>
