@@ -19,7 +19,7 @@ const OrbitCameraControls = () => {
 export default function Home() {
     const adjustModel = () => {
         let screenScale = null;
-        let screenPosition = [0, 0, 0]; // [x, z, y]
+        let screenPosition = [0, 0, 0];
         let rotation = [0, 0, 0];
 
         if (window.innerWidth < 768) {
@@ -37,7 +37,7 @@ export default function Home() {
         <section className = 'w-full h-screen relative'>
             <Canvas 
                 className = 'w-full h-screen bg-transparent'
-                camera = {{near: 0.1, far: 20000}}
+                camera = {{near: 0.1, far: 20000, position: [0, 3600, -500], fov: [50]}}
             >
                 <Suspense fallback = {<Loader />}>
                     <axesHelper args={[5]} />
@@ -45,10 +45,8 @@ export default function Home() {
                     <OrbitCameraControls />
                     <directionalLight position = {[0, 1, 0]} intensity = {2}/>
                     <ambientLight intensity = {0.03}/>
-                    <pointLight />
-                    <spotLight />
-                    <hemisphereLight />
 
+                    
                     <Auditorium 
                         position = {auditoriumPosition}
                         scale = {auditoriumScale}
