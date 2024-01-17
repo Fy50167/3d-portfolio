@@ -9,6 +9,8 @@ const OrbitCameraControls = () => {
     const {camera, gl} = useThree();
     useEffect(() => {
         const controls = new OrbitControls(camera, gl.domElement);
+        controls.enablePan = false;  
+        controls.enableZoom = false; 
         return () => {
             controls.dispose();
         }
