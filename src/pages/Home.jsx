@@ -6,8 +6,8 @@ import Loader from '../components/Loader'
 export default function Home() {
     const adjustModel = () => {
         let screenScale = null;
-        let screenPosition = [0, -0.65, -43];
-        let rotation = [0.1, 4.7, 0];
+        let screenPosition = [0, 450, 1500]; // [x, z, y]
+        let rotation = [150, 0, 0];
 
         if (window.innerWidth < 768) {
             screenScale = [0.9, 0.9, 0.9];
@@ -24,11 +24,13 @@ export default function Home() {
         <section className = 'w-full h-screen relative'>
             <Canvas 
                 className = 'w-full h-screen bg-transparent'
-                camera = {{near: 0.1, far: 1000}}
+                camera = {{near: 0.1, far: 20000}}
             >
+                <axesHelper args={[5]} />
+                <gridHelper size={10} divisions={10} />
                 <Suspense fallback = {<Loader />}>
-                    <directionalLight />
-                    <ambientLight />
+                    <directionalLight position = {[0, 1, 0]} intensity = {2}/>
+                    <ambientLight intensity = {0.03}/>
                     <pointLight />
                     <spotLight />
                     <hemisphereLight />
