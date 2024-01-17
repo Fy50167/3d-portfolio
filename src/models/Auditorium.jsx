@@ -4,11 +4,9 @@ import { useFrame, useThree } from "@react-three/fiber";
 import auditoriumScene from '../assets/3d/auditorium.glb';
 import { a } from '@react-spring/three';
 
-export default function Auditorium() {
+export default function Auditorium(props) {
     const auditoriumRef = useRef();
-    const { nodes, materials } = useGLTF(
-        "/Concert_Hall__Amphitheater_VR_Nov.glb"
-    );
+    const { nodes, materials } = useGLTF(auditoriumScene);
     
     return (
         
