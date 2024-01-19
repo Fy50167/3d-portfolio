@@ -11,16 +11,25 @@ import Loader from '../components/Loader';
 
 
 function LightScene() {
-    const { x, tx, y, ty, z, tz, intensity } = useControls({ x: { value: 1, min: 0, max: 20 }, y: { value: 1, min: 0, max: 3000 }, z: { value: 1, min: 0, max: 7000 }, intensity: { value: 0.5, min: 0, max: 5 }});
+    /* const { x, tx, y, ty, z, tz, intensity } = useControls({
+        x: { value: 1, min: 0, max: 3000 },
+        y: { value: 1, min: 0, max: 3000 },
+        z: { value: 1, min: 0, max: 7000 },
+        intensity: { value: 0.5, min: 0, max: 5 }
+    });
    const dirLight = useRef();
 
-    // Use the directional light helper
-    useHelper(dirLight, DirectionalLightHelper, 500, 'red');
+    useHelper(dirLight, DirectionalLightHelper, 500, 'red'); */
 
     return (
         <>
-            <ambientLight intensity = {0.1}/>
-            <directionalLight target = {[tx, ty, tz]} position = {[x, y, z]} intensity = {intensity} color = '#efddb4' ref={dirLight}/>
+            <ambientLight color='#efddb4' intensity = {0.1}/>
+            <directionalLight
+                position={[0, 2500, 0]}
+                intensity={0.30}
+                color='#efddb4'
+                ref={dirLight}
+            />
             <hemisphereLight color = '#FFD700' groundColor = {'#000000'} intensity = {0.1} />
         </>
     )
@@ -50,7 +59,7 @@ export default function Home() {
                 camera={{ near: 0.1, far: 20000, position: [50, 2100, -1850], fov: [50], rotation: [Math.PI / 8, Math.PI, 0]}}
             >
                 <Suspense fallback = {<Loader />}>
-                    {/* <FirstPersonControls 
+                    <FirstPersonControls 
                         activeLook
                         autoForward
                         enabled
@@ -62,7 +71,7 @@ export default function Home() {
                         movementSpeed={0.5}
                         verticalMax={3.141592653589793}
                         verticalMin={0}
-                    /> */}
+                    />
                     <LightScene />
                     <Auditorium 
                         position = {auditoriumPosition}
