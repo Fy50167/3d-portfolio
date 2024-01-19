@@ -1,7 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { FirstPersonControls } from '@react-three/drei';
+import { FirstPersonControls, useHelper } from '@react-three/drei';
+import { DirectionalLight, DirectionalLightHelper } from 'three';
+import { useControls } from "leva";
 import { Suspense } from 'react';
 import Auditorium from '../models/Auditorium';
 import Loader from '../components/Loader';
@@ -36,6 +38,10 @@ export default function Home() {
 
     const [auditoriumScale, auditoriumPosition, auditoriumRotation] = adjustModel(); 
 
+    const dirLight = useRef<DirectionalLight>(null);
+    useHelper(dirLight, DirectionalLightHelper, 1, "red");
+
+
     return (
         <section className = 'w-full h-screen relative'>
             <Canvas 
@@ -43,8 +49,6 @@ export default function Home() {
                 camera = {{near: 0.1, far: 20000, position: [50, 2100, -1850], fov: [50],  rotation: [Math.PI / 8, Math.PI, 0]}}
             >
                 <Suspense fallback = {<Loader />}>
-                    <axesHelper args={[5]} />
-                    <gridHelper size={10} divisions={50} />
                     <FirstPersonControls 
                         activeLook
                         autoForward
@@ -54,12 +58,14 @@ export default function Home() {
                         heightMin={0}
                         lookSpeed={0.03}
                         lookVertical
-                        movementSpeed={1}
+                        movementSpeed={0.5}
                         verticalMax={3.141592653589793}
                         verticalMin={0}
                     />
-                    <directionalLight position = {[0, 1, 0]} intensity = {2}/>
-                    <ambientLight intensity = {0.03}/>
+                    <ambientLight intensity = {0.1}/>
+                    <directionalLight position = {[0, 5, 0]} intensity = {0.4} ref = {dirLight}/>
+                    <hemisphereLight color = '#FFD700' groundColor = {'#000000'} intensity = {0.1} />
+                    
 
                     
                     <Auditorium 
