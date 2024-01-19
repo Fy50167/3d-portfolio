@@ -16,8 +16,8 @@ export default function LightScene() {
     /* const dirLight = useRef();
     useHelper(dirLight, DirectionalLightHelper, 500, 'red'); */
 
-    const spotLight = useRef();
-    useHelper(spotLight, SpotLightHelper, 'green');
+    /* const spotLight = useRef();
+    useHelper(spotLight, SpotLightHelper, 'green'); */
 
     return (
         <>
