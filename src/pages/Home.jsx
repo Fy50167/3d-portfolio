@@ -41,6 +41,8 @@ export default function Home() {
     const dirLight = useRef<DirectionalLight>(null);
     useHelper(dirLight, DirectionalLightHelper, 1, "red");
 
+    const { x, y, z } = useControls({ x: { value: 1, min: 0, max: 20 }, y: { value: 1, min: 0, max: 20 }, z: { value: 1, min: 0, max: 20 }});
+
 
     return (
         <section className = 'w-full h-screen relative'>
@@ -63,7 +65,7 @@ export default function Home() {
                         verticalMin={0}
                     />
                     <ambientLight intensity = {0.1}/>
-                    <directionalLight position = {[0, 5, 0]} intensity = {0.4} ref = {dirLight}/>
+                    <directionalLight position = {[x, y, z]} intensity = {0.4} ref = {dirLight}/>
                     <hemisphereLight color = '#FFD700' groundColor = {'#000000'} intensity = {0.1} />
                     
 
