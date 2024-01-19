@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { FirstPersonControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import Auditorium from '../models/Auditorium';
 import Loader from '../components/Loader';
@@ -9,8 +10,8 @@ const OrbitCameraControls = () => {
     const {camera, gl} = useThree();
     useEffect(() => {
         const controls = new OrbitControls(camera, gl.domElement);
-        controls.enablePan = false;  
-        controls.enableZoom = false; 
+    
+        controls.minDistance = 0;
         return () => {
             controls.dispose();
         }
@@ -39,12 +40,24 @@ export default function Home() {
         <section className = 'w-full h-screen relative'>
             <Canvas 
                 className = 'w-full h-screen bg-transparent'
-                camera = {{near: 0.1, far: 20000, position: [0, 3600, -500], fov: [50]}}
+                camera = {{near: 0.1, far: 20000, position: [50, 2100, -1850], fov: [50],  rotation: [Math.PI / 8, Math.PI, 0]}}
             >
                 <Suspense fallback = {<Loader />}>
                     <axesHelper args={[5]} />
                     <gridHelper size={10} divisions={50} />
-                    <OrbitCameraControls />
+                    <FirstPersonControls 
+                        activeLook
+                        autoForward
+                        enabled
+                        heightCoef={1}
+                        heightMax={1}
+                        heightMin={0}
+                        lookSpeed={0.03}
+                        lookVertical
+                        movementSpeed={1}
+                        verticalMax={3.141592653589793}
+                        verticalMin={0}
+                    />
                     <directionalLight position = {[0, 1, 0]} intensity = {2}/>
                     <ambientLight intensity = {0.03}/>
 
