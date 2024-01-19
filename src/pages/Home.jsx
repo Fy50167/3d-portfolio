@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber';
-import { FirstPersonControls } from '@react-three/drei';
+import { FirstPersonControls, Text } from '@react-three/drei';
 import { Suspense } from 'react';
 import Auditorium from '../models/Auditorium';
 import Loader from '../components/Loader';
@@ -44,6 +44,18 @@ export default function Home() {
                         verticalMin={0}
                     />
                     <LightScene />
+                    <Text
+                        position={[-50, 1500, 2500]}
+                        font = {'fonts/JuliusSansOne-Regular.ttf'}
+                        color="#b99b4c"
+                        fontSize={150}
+                        lineHeight={1}
+                        rotation={[0, Math.PI, 0]}
+                        letterSpacing={0.02}
+                        textAlign="center"
+                    >
+                        Francis Yang{"\n"}Web Developer
+                    </Text>
                     <Auditorium 
                         position = {auditoriumPosition}
                         scale = {auditoriumScale}

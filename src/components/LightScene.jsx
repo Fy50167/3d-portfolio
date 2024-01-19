@@ -36,9 +36,9 @@ export default function LightScene() {
                 distance={2700}
                 decay = {-100}
                 angle={0.90}
-                ref={spotLight}
+                /* ref={spotLight} */
             />
-            <hemisphereLight color = '#FFD700' groundColor = {'#000000'} intensity = {0.1} />
+            <hemisphereLight color = '#FFD700' groundColor = {'#000000'} intensity = {0.15} />
         </>
     )
 }
