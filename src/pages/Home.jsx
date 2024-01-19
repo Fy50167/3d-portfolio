@@ -1,47 +1,10 @@
-import { useEffect, useRef } from 'react';
-import { Canvas, useThree } from '@react-three/fiber';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { FirstPersonControls, useHelper } from '@react-three/drei';
-import { DirectionalLight, DirectionalLightHelper, SpotLightHelper } from 'three';
-import { useControls } from "leva";
+import { Canvas } from '@react-three/fiber';
+import { FirstPersonControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import Auditorium from '../models/Auditorium';
 import Loader from '../components/Loader';
+import LightScene from '../components/LightScene';
 
-
-
-function LightScene() {
-    const { x, tx, y, ty, z, tz, intensity } = useControls({
-        x: { value: 1, min: 0, max: 3000 },
-        y: { value: 1, min: 0, max: 3000 },
-        z: { value: 1, min: 0, max: 7000 },
-        intensity: { value: 0.5, min: 0, max: 5 }
-    });
-    /* const dirLight = useRef();
-    useHelper(dirLight, DirectionalLightHelper, 500, 'red'); */
-
-    const spotLight = useRef();
-    useHelper(spotLight, SpotLightHelper, 500, 'green');
-
-    return (
-        <>
-            <ambientLight color='#efddb4' intensity = {0.1}/>
-            <directionalLight
-                position={[0, 2500, 0]}
-                intensity={0.30}
-                color='#efddb4'
-                /*ref={dirLight}*/
-            />
-            <spotLight 
-                position = {{x, y, z}}
-                intensity = {intensity}
-                color = '#efddb4'
-                ref = {spotLight}
-            />
-            <hemisphereLight color = '#FFD700' groundColor = {'#000000'} intensity = {0.1} />
-        </>
-    )
-};
 
 export default function Home() {
     const adjustModel = () => {
