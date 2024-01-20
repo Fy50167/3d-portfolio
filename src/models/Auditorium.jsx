@@ -6,6 +6,7 @@ import { a } from '@react-spring/three';
 export default function Auditorium(props) {
     const auditoriumRef = useRef();
     const { nodes, materials } = useGLTF(auditoriumScene);
+
     
     return (
         
@@ -160,6 +161,7 @@ export default function Auditorium(props) {
                 geometry={nodes.polySurface4324_lambert80_0.geometry}
                 material={materials.lambert80}
                 />
+                {/* // Piano follows */}
                 <mesh
                 castShadow
                 receiveShadow
@@ -204,6 +206,8 @@ export default function Auditorium(props) {
                 rotation={[0, 1.528, 0]}
                 scale={1.547}
                 />
+  
+               
                 <mesh
                 castShadow
                 receiveShadow

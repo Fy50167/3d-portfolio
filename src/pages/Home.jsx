@@ -1,9 +1,12 @@
 import { Canvas } from '@react-three/fiber';
-import { FirstPersonControls, Text } from '@react-three/drei';
-import { Suspense } from 'react';
+import { FirstPersonControls  } from '@react-three/drei';
+import { Suspense, useRef } from 'react';
 import Auditorium from '../models/Auditorium';
 import Loader from '../components/Loader';
 import LightScene from '../components/LightScene';
+import OverlayText from '../components/OverlayText';
+import { Color } from "three";
+import { Bloom, EffectComposer } from '@react-three/postprocessing';
 
 
 export default function Home() {
@@ -23,6 +26,9 @@ export default function Home() {
 
     const [auditoriumScale, auditoriumPosition, auditoriumRotation] = adjustModel(); 
 
+    const bloomColor = new Color("#b99b4c");
+    bloomColor.multiplyScalar(1.3);
+
     return (
         <section className = 'w-full h-screen relative'>
             <Canvas 
@@ -30,7 +36,7 @@ export default function Home() {
                 camera={{ near: 0.1, far: 20000, position: [50, 2100, -1850], fov: [50], rotation: [Math.PI / 8, Math.PI, 0]}}
             >
                 <Suspense fallback = {<Loader />}>
-                    <FirstPersonControls 
+                    {/* <FirstPersonControls 
                         activeLook
                         autoForward
                         enabled
@@ -42,20 +48,16 @@ export default function Home() {
                         movementSpeed={0.5}
                         verticalMax={3.141592653589793}
                         verticalMin={0}
-                    />
+                    /> */}
                     <LightScene />
-                    <Text
-                        position={[-50, 1500, 2500]}
-                        font = {'fonts/JuliusSansOne-Regular.ttf'}
-                        color="#b99b4c"
-                        fontSize={150}
-                        lineHeight={1}
-                        rotation={[0, Math.PI, 0]}
-                        letterSpacing={0.02}
-                        textAlign="center"
-                    >
-                        Francis Yang{"\n"}Web Developer
-                    </Text>
+                    <OverlayText />
+                    
+                    <EffectComposer>
+                        <Bloom 
+                            mipmapBlur
+                            intensity = {1.2}
+                        />
+                    </EffectComposer>
                     <Auditorium 
                         position = {auditoriumPosition}
                         scale = {auditoriumScale}
