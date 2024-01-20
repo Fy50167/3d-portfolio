@@ -2,6 +2,7 @@ import { Canvas } from '@react-three/fiber';
 import { FirstPersonControls  } from '@react-three/drei';
 import { Suspense, useRef } from 'react';
 import Auditorium from '../models/Auditorium';
+import Header from '../components/Header';
 import Loader from '../components/Loader';
 import LightScene from '../components/LightScene';
 import OverlayText from '../components/OverlayText';
@@ -36,7 +37,7 @@ export default function Home() {
                 camera={{ near: 0.1, far: 20000, position: [50, 2100, -1850], fov: [50], rotation: [Math.PI / 8, Math.PI, 0]}}
             >
                 <Suspense fallback = {<Loader />}>
-                    {/* <FirstPersonControls 
+                    <FirstPersonControls 
                         activeLook
                         autoForward
                         enabled
@@ -48,7 +49,7 @@ export default function Home() {
                         movementSpeed={0.5}
                         verticalMax={3.141592653589793}
                         verticalMin={0}
-                    /> */}
+                    />
                     <LightScene />
                     <OverlayText />
                     

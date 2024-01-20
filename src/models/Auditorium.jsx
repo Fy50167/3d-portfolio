@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { useGLTF, MeshReflectorMaterial } from "@react-three/drei";
 import auditoriumScene from '../assets/3d/auditorium.glb';
-import { a } from '@react-spring/three';
 
 export default function Auditorium(props) {
     const auditoriumRef = useRef();
@@ -10,7 +9,7 @@ export default function Auditorium(props) {
     
     return (
         
-        <a.group ref = {auditoriumRef} {...props} dispose={null}>
+        <group ref = {auditoriumRef} {...props} dispose={null}>
         <group scale={100}>
             <group rotation={[-Math.PI / 2, 0, 0]} scale={0.128}>
             <group rotation={[Math.PI / 2, 0, 0]}>
@@ -289,6 +288,6 @@ export default function Auditorium(props) {
                 metalness={0.5}
                 />
             </mesh>
-        </a.group>
+        </group>
     )
 }
