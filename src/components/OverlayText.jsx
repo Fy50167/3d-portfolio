@@ -15,8 +15,6 @@ export default function OverlayText() {
             rotation={[0, Math.PI, 0]}
             letterSpacing={0.02}
             textAlign="center"
-            scale={scale}
-            onClick = {console.log('hi!')}
         >
             FRANCIS YANG{"\n"}WEB DEVELOPER
         </Text>
