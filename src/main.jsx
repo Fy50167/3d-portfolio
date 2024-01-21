@@ -5,6 +5,7 @@ import App from './App';
 import Error from './pages/Error';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
+import Resume from './pages/Resume';
 import Projects from './pages/Projects';
 
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         index: '/projects',
         element: <Projects />
+      },
+      {
+        index: '/resume',
+        element: <Resume />
       }
     ],
   },

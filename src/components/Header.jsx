@@ -29,16 +29,16 @@ export default function Header() {
                     </div>
                     <div className="hidden sm:ml-6 sm:block">
                     <div className="flex space-x-4">
-                        <Link to='/' className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">
+                        <Link to='/' activeClassName = 'active' className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">
                             About
                         </Link>
-                        <Link to='/' className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">
+                        <Link to='/projects' activeClassName = 'active' className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">
                             Work
                         </Link>
-                        <Link to='/' className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">
+                        <Link to='/resume' activeClassName = 'active' className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">
                             Resume
                         </Link>
-                        <Link to='/' className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">
+                        <Link to='/contact' activeClassName = 'active' className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">
                             Contact
                         </Link>
                     </div>
