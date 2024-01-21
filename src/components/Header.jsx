@@ -1,68 +1,148 @@
-import LOGO from '../assets/images/KD_Logo.png';
-import { Link } from "react-router-dom";
-
-
-
-export default function Header() {
-    return (
-        <>
-            <nav className="bg-gray-800">
-            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                <div className="relative flex h-16 items-center justify-between">
-                <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                    <button type="button" className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                    <span className="absolute -inset-0.5"></span>
-                    <span className="sr-only">Open main menu</span>
-
-                    <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-            
-                    <svg className="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                    </button>
-                </div>
-                <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                    <div className="flex flex-shrink-0 items-center">
-                    <img className="h-8 w-auto" src={LOGO} alt="My Logo" />
-                    </div>
-                    <div className="hidden sm:ml-6 sm:block">
-                    <div className="flex space-x-4">
-                        <Link to='/' activeClassName = 'active' className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">
-                            About
-                        </Link>
-                        <Link to='/projects' activeClassName = 'active' className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">
-                            Work
-                        </Link>
-                        <Link to='/resume' activeClassName = 'active' className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">
-                            Resume
-                        </Link>
-                        <Link to='/contact' activeClassName = 'active' className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">
-                            Contact
-                        </Link>
-                    </div>
-                    </div>
-                </div>
-                <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <div className="relative ml-3">
-                    <div>
-                        <img className="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-                    </div>
-                    </div>
-                </div>
-                </div>
+import React from "react";
+import {
+  Navbar,
+  MobileNav,
+  Typography,
+  Button,
+  IconButton,
+  Card,
+} from "@material-tailwind/react";
+ 
+export function Header() {
+  const [openNav, setOpenNav] = React.useState(false);
+ 
+  React.useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth >= 960 && setOpenNav(false),
+    );
+  }, []);
+ 
+  const navList = (
+    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center">
+          Pages
+        </a>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center">
+          Account
+        </a>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center">
+          Blocks
+        </a>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center">
+          Docs
+        </a>
+      </Typography>
+    </ul>
+  );
+ 
+  return (
+    <div className="-m-6 max-h-[768px] w-[calc(100%+48px)] overflow-scroll">
+      <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
+        <div className="flex items-center justify-between text-blue-gray-900">
+          <Typography
+            as="a"
+            href="#"
+            className="mr-4 cursor-pointer py-1.5 font-medium"
+          >
+            Material Tailwind
+          </Typography>
+          <div className="flex items-center gap-4">
+            <div className="mr-4 hidden lg:block">{navList}</div>
+            <div className="flex items-center gap-x-1">
+              <Button
+                variant="text"
+                size="sm"
+                className="hidden lg:inline-block"
+              >
+                <span>Log In</span>
+              </Button>
+              <Button
+                variant="gradient"
+                size="sm"
+                className="hidden lg:inline-block"
+              >
+                <span>Sign in</span>
+              </Button>
             </div>
-
-            <div className="sm:hidden" id="mobile-menu">
-                <div className="space-y-1 px-2 pb-3 pt-2">
-                <a href="#" className="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">About</a>
-                <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Work</a>
-                <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Resume</a>
-                <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Contact</a>
-                </div>
-            </div>
-            </nav>
-        </>
-    )
+            <IconButton
+              variant="text"
+              className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+              ripple={false}
+              onClick={() => setOpenNav(!openNav)}
+            >
+              {openNav ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  className="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
+            </IconButton>
+          </div>
+        </div>
+        <MobileNav open={openNav}>
+          {navList}
+          <div className="flex items-center gap-x-1">
+            <Button fullWidth variant="text" size="sm" className="">
+              <span>Log In</span>
+            </Button>
+            <Button fullWidth variant="gradient" size="sm" className="">
+              <span>Sign in</span>
+            </Button>
+          </div>
+        </MobileNav>
+      </Navbar>
+    </div>
+  );
 }
