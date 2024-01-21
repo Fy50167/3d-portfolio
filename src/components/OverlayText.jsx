@@ -4,19 +4,6 @@ import { a, useSpring } from '@react-spring/three';
 
 export default function OverlayText() {
 
-
-    const [scale, setScale] = useState([1, 1, 1]);
-    
-    const growShrink = () => {
-        if (scale == [1, 1, 1]) {
-            setScale([1.2, 1.2, 1.2]);
-            console.log('hit');
-        } else {
-            console.log('hit');
-            setScale([1, 1, 1]);
-        }
-    }
-
     return (
         <>
         <Text
