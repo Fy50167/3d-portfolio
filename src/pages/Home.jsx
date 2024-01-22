@@ -1,14 +1,13 @@
 import { Canvas } from '@react-three/fiber';
-import { FirstPersonControls  } from '@react-three/drei';
+import { FirstPersonControls } from '@react-three/drei';
 import { Suspense, useRef } from 'react';
 import Auditorium from '../models/Auditorium';
-import Header from '../components/Header';
 import Loader from '../components/Loader';
 import LightScene from '../components/LightScene';
 import OverlayText from '../components/OverlayText';
-import { Color } from "three";
+import { Color } from 'three';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
-
+import { useControls } from 'leva';
 
 export default function Home() {
     const adjustModel = () => {
@@ -23,20 +22,33 @@ export default function Home() {
         }
 
         return [screenScale, screenPosition, rotation];
-    }
+    };
 
-    const [auditoriumScale, auditoriumPosition, auditoriumRotation] = adjustModel(); 
+    const [auditoriumScale, auditoriumPosition, auditoriumRotation] =
+        adjustModel();
 
-    const bloomColor = new Color("#b99b4c");
+    const bloomColor = new Color('#b99b4c');
     bloomColor.multiplyScalar(1.3);
 
+    /* const { x, y, z } = useControls({
+        x: { value: 1, min: -3000, max: 3000 },
+        y: { value: 1, min: -3000, max: 3000 },
+        z: { value: 1, min: -7000, max: 7000 },
+    }); */
+
     return (
-        <section className = 'w-full h-screen relative'>
-            <Canvas 
-                className="w-full h-screen bg-transparent"
-                camera={{ near: 0.1, far: 20000, position: [50, 2100, -1850], fov: [50], rotation: [Math.PI / 8, Math.PI, 0]}}
+        <section className='w-full h-screen relative'>
+            <Canvas
+                className='w-full h-screen bg-transparent'
+                camera={{
+                    near: 0.1,
+                    far: 20000,
+                    position: [50, 2100, -1850],
+                    fov: [50],
+                    rotation: [Math.PI / 8, Math.PI, 0],
+                }}
             >
-                <Suspense fallback = {<Loader />}>
+                <Suspense fallback={<Loader />}>
                     {/* <FirstPersonControls 
                         activeLook
                         autoForward
@@ -52,21 +64,17 @@ export default function Home() {
                     /> */}
                     <LightScene />
                     <OverlayText />
-                    
+
                     <EffectComposer>
-                        <Bloom 
-                            mipmapBlur
-                            intensity = {1.2}
-                        />
+                        <Bloom mipmapBlur intensity={1.2} />
                     </EffectComposer>
-                    <Auditorium 
-                        position = {auditoriumPosition}
-                        scale = {auditoriumScale}
-                        rotation = {auditoriumRotation}
+                    <Auditorium
+                        position={auditoriumPosition}
+                        scale={auditoriumScale}
+                        rotation={auditoriumRotation}
                     />
                 </Suspense>
-
             </Canvas>
         </section>
-    )
+    );
 }
