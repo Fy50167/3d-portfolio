@@ -1,6 +1,6 @@
 import { Text } from '@react-three/drei';
 
-export default function SectionText() {
+export default function ThreeDText() {
     return (
         <>
             <Text

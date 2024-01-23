@@ -5,7 +5,7 @@ import Auditorium from '../models/Auditorium';
 import Loader from '../components/Loader';
 import LightScene from '../components/LightScene';
 import CameraAnimation from '../components/CameraAnimation';
-import SectionText from '../components/SectionText';
+import ThreeDText from '../components/3DText';
 import { Color } from 'three';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
 import { useControls } from 'leva';
@@ -64,7 +64,7 @@ export default function Home() {
                         verticalMin={0}
                     /> */}
                     <LightScene />
-                    <SectionText />
+                    <ThreeDText />
                     <CameraAnimation />
 
                     <EffectComposer>
