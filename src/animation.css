@@ -19,14 +19,6 @@
     -ms-animation: fadeDown 1s;
 }
 
-.lower-content {
-    top: 0;
-    opacity: 0;
-    width: inherit;
-    height: inherit;
-    top: 4.7rem;
-}
-
 .scroll-upper-enter {
     opacity: 0;
     transform: translateY(-100%);

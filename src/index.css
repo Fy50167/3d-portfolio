@@ -100,7 +100,20 @@ nav {
     bottom: unset;
 }
 
+.lower-content {
+    top: 0;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    top: 4.7rem;
+}
+
 @media screen and (min-width: 800px) {
+    .section-div {
+        height: 75%;
+        top: 9rem;
+    }
+
     .portrait {
         width: 25%;
     }
@@ -112,5 +125,9 @@ nav {
     .arrow-up {
         top: 20%;
         bottom: unset;
+    }
+
+    .lower-content {
+        top: 9rem;
     }
 }
