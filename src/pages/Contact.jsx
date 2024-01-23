@@ -1,24 +1,50 @@
-import React, { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
 
 export default function Contact() {
     document.title = 'Francis Yang - Contact';
 
     const form = useRef();
+    const name = useRef();
+    const message = useRef();
 
     const sendEmail = (e) => {
-        e.preventDefault();
+        if (name.current.value === '' || message.current.value === '') {
+            e.preventDefault();
+            Swal.fire({
+                title: 'Submission failed.',
+                text: 'It looks like one or more fields were empty.',
+                icon: 'error',
+                confirmButtonText: 'Confirm',
+            });
+            e.target.reset();
+        } else {
+            e.preventDefault();
 
-        Swal.fire({
-            title: 'Message received!',
-            text: "I'll get back to you shortly.",
-            icon: 'success',
-            confirmButtonText: 'Confirm',
-        });
+            Swal.fire({
+                title: 'Message received!',
+                text: "I'll get back to you shortly.",
+                icon: 'success',
+                confirmButtonText: 'Confirm',
+            });
 
-        console.log(form.current);
+            emailjs
+                .sendForm(
+                    import.meta.env.VITE_SERVICE_ID,
+                    import.meta.env.VITE_TEMPLATE_ID,
+                    form.current,
+                    import.meta.env.VITE_PUBLIC_KEY
+                )
+                .then(
+                    (result) => {
+                        e.target.reset();
+                    },
+                    (error) => {
+                        console.log(error.text);
+                    }
+                );
+        }
     };
 
     return (
@@ -39,6 +65,7 @@ export default function Contact() {
                                 className='form-control'
                                 type='text'
                                 name='user_name'
+                                ref={name}
                             />
                         </div>
                         <div className='form-group w-full flex flex-col justify-evenly-items-center mb-3'>
@@ -55,6 +82,7 @@ export default function Contact() {
                                 className='form-control'
                                 rows='5'
                                 name='message'
+                                ref={message}
                             />
                         </div>
                         <button type='submit' className='btn gold stylized'>
