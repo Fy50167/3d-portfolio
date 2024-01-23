@@ -5,9 +5,11 @@ export default function Resume() {
 
     return (
         <div className='section-div'>
-            <div className='fade-down delay-1 animated w-100 h-auto'>
-                <h1 className='stylized gold large-text mb-4'>RESUMÉ</h1>
-                <div className='text-start w-100 m-auto'>
+            <div className='fade-down delay-1 animated w-full h-auto flex flex-col justify-center items-center'>
+                <h1 className='stylized gold text-4xl md:text-6xl mb-4'>
+                    RESUMÉ
+                </h1>
+                <div className='text-start w-full m-auto'>
                     <h2 className='text-center'>
                         View my full resume{' '}
                         <span>
@@ -20,7 +22,7 @@ export default function Resume() {
                             </a>
                         </span>
                     </h2>
-                    <div className='resume m-auto fs-4'>
+                    <div className='w-5/6 md:w-3/5 m-auto fs-4'>
                         <h2>Tech Languages</h2>
                         <ul>
                             <li>
