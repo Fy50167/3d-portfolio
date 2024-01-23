@@ -37,7 +37,46 @@ export default function Contact() {
 
     return (
         <>
-            <div className='section-div'></div>
+            <div className='section-div'>
+                <div className='fade-down delay-1 animated w-100 h-auto'>
+                    <h1 className='stylized gold large-text mb-4'>
+                        CONTACT ME
+                    </h1>
+                    <form
+                        className='h-auto m-auto p-4 contact-wrapper'
+                        ref={form}
+                        onSubmit={sendEmail}
+                    >
+                        <div className='form-group mb-3'>
+                            <label className='mb-3'>Name</label>
+                            <input
+                                className='form-control'
+                                type='text'
+                                name='user_name'
+                            />
+                        </div>
+                        <div className='form-group mb-3'>
+                            <label className='mb-3'>Email Address</label>
+                            <input
+                                className='form-control'
+                                type='email'
+                                name='user_email'
+                            />
+                        </div>
+                        <div className='form-group mb-3'>
+                            <label className='mb-3'>Message</label>
+                            <textarea
+                                className='form-control'
+                                rows='5'
+                                name='message'
+                            />
+                        </div>
+                        <button type='submit' className='btn gold stylized'>
+                            SUBMIT
+                        </button>
+                    </form>
+                </div>
+            </div>
         </>
     );
 }
