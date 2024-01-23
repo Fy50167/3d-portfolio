@@ -4,7 +4,6 @@ import { Suspense, useRef } from 'react';
 import Auditorium from '../models/Auditorium';
 import Loader from '../components/Loader';
 import LightScene from '../components/LightScene';
-import OverlayText from '../components/OverlayText';
 import CameraAnimation from '../components/CameraAnimation';
 import SectionText from '../components/SectionText';
 import { Color } from 'three';
@@ -65,7 +64,6 @@ export default function Home() {
                         verticalMin={0}
                     /> */}
                     <LightScene />
-                    <OverlayText />
                     <SectionText />
                     <CameraAnimation />
 

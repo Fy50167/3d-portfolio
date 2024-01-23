@@ -1,8 +1,4 @@
-import { Text, useCursor } from '@react-three/drei';
-import { useState, useRef, useEffect } from 'react';
-import { useFrame, useThree } from '@react-three/fiber';
-import { useLocation } from 'react-router-dom';
-import { useControls } from 'leva';
+import { Text } from '@react-three/drei';
 
 export default function SectionText() {
     return (
@@ -30,7 +26,7 @@ export default function SectionText() {
                 letterSpacing={0.02}
                 textAlign='center'
             >
-                Resume
+                Resumé
             </Text>
 
             <Text
@@ -44,6 +40,19 @@ export default function SectionText() {
                 textAlign='center'
             >
                 Contact
+            </Text>
+
+            <Text
+                position={[-50, 1500, 2500]}
+                font={'fonts/JuliusSansOne-Regular.ttf'}
+                color='#b99b4c'
+                fontSize={150}
+                lineHeight={1}
+                rotation={[0, Math.PI, 0]}
+                letterSpacing={0.02}
+                textAlign='center'
+            >
+                FRANCIS YANG{'\n'}WEB DEVELOPER
             </Text>
         </>
     );
