@@ -5,6 +5,7 @@ import Auditorium from '../models/Auditorium';
 import Loader from '../components/Loader';
 import LightScene from '../components/LightScene';
 import OverlayText from '../components/OverlayText';
+import SectionText from '../components/SectionText';
 import { Color } from 'three';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
 import { useControls } from 'leva';
@@ -64,6 +65,7 @@ export default function Home() {
                     /> */}
                     <LightScene />
                     <OverlayText />
+                    <SectionText />
 
                     <EffectComposer>
                         <Bloom mipmapBlur intensity={1.2} />
