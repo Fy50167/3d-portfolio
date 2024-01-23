@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
+import './animation.css';
 import App from './App';
 import Error from './pages/Error';
 import About from './pages/About';

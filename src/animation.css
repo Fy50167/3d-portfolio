@@ -1,0 +1,68 @@
+.scroll-upper-enter {
+opacity: 0;
+transform: translateY(-100%);
+}
+
+.scroll-upper-enter-active {
+opacity: 1;
+transform: translateY(0);
+transition: transform 1s, opacity 1s ease-in;
+}
+
+.scroll-upper-enter-done {
+opacity: 1;
+transform: translateY(0);
+}
+
+.scroll-upper-exit {
+opacity: 1;
+transform: translateY(0);
+}
+
+.scroll-upper-exit-active {
+opacity: 0;
+transform: translateY(-100%);
+transition: transform 1s, opacity 1s ease-out;
+}
+
+.scroll-upper-exit-done {
+opacity: 0;
+transform: translateY(-100%);
+}
+
+.scroll-lower-enter {
+opacity: 0;
+transform: translateY(100%);
+}
+
+.scroll-lower-enter-active {
+opacity: 1;
+transform: translateY(0);
+transition: transform 1s, opacity 1s ease-in;
+}
+
+.scroll-lower-enter-done {
+opacity: 1;
+transform: translateY(0);
+}
+
+.scroll-lower-exit {
+opacity: 1;
+transform: translateY(0);
+}
+
+.scroll-lower-exit-active {
+opacity: 0;
+transform: translateY(100%);
+transition: transform 1s, opacity 1s ease-out;
+}
+
+.scroll-lower-exit-done {
+opacity: 0;
+transform: translateY(100%);
+}
+
+.animated {
+animation-fill-mode: forwards;
+visibility: hidden;
+}
