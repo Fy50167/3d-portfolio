@@ -108,6 +108,14 @@ nav {
     top: 4.7rem;
 }
 
+input {
+    color: black;
+}
+
+textarea {
+    color: black;
+}
+
 @media screen and (min-width: 800px) {
     .section-div {
         height: 75%;

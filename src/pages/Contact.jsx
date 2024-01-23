@@ -18,21 +18,7 @@ export default function Contact() {
             confirmButtonText: 'Confirm',
         });
 
-        emailjs
-            .sendForm(
-                import.meta.env.VITE_SERVICE_ID,
-                import.meta.env.VITE_TEMPLATE_ID,
-                form.current,
-                import.meta.env.VITE_PUBLIC_KEY
-            )
-            .then(
-                (result) => {
-                    e.target.reset();
-                },
-                (error) => {
-                    console.log(error.text);
-                }
-            );
+        console.log(form.current);
     };
 
     return (
