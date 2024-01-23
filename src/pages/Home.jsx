@@ -1,5 +1,5 @@
-import { Canvas } from '@react-three/fiber';
-import { FirstPersonControls } from '@react-three/drei';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { FirstPersonControls, Text } from '@react-three/drei';
 import { Suspense, useRef } from 'react';
 import Auditorium from '../models/Auditorium';
 import Loader from '../components/Loader';
@@ -50,7 +50,7 @@ export default function Home() {
                 }}
             >
                 <Suspense fallback={<Loader />}>
-                    {/* <FirstPersonControls 
+                    {/* <FirstPersonControls
                         activeLook
                         autoForward
                         enabled

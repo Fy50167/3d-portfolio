@@ -1,23 +1,20 @@
-import { Text } from '@react-three/drei';
+import { Text, useCursor } from '@react-three/drei';
 import { useState, useRef, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useLocation } from 'react-router-dom';
 import { useControls } from 'leva';
 
-export default function SectionText(props) {
-    const location = useLocation();
-    const markerRef = useRef();
-    const [boolean, setBoolean] = useState(false);
-    useEffect(() => {
-        console.log(location.pathname);
-    }, [location.pathname]);
-    useFrame((state) => {
-        if (boolean) {
-            state.camera.position.lerp({ x: 50, y: 25, z: 50 });
+export default function SectionText() {
+    /* const location = useLocation();
+    const ref = useRef();
+    const [active, setActive] = useState(false);
+    useCursor(active);
+    if (location.pathname === '/projects') {
+        useFrame((state) => {
+            state.camera.position.lerp({ x: 1700, y: 500, z: 1250 }, 0.03);
             state.camera.lookAt(0, 0, 0);
-            state.camera.updateProjectionMatrix;
-        }
-    });
+        });
+    } */
 
     return (
         <>
@@ -27,10 +24,9 @@ export default function SectionText(props) {
                 color='#b99b4c'
                 fontSize={150}
                 lineHeight={1}
-                rotation={[0, Math.PI / 1.08, 0]}
+                rotation={[0, Math.PI, 0]}
                 letterSpacing={0.02}
                 textAlign='center'
-                ref={markerRef}
             >
                 Work
             </Text>
@@ -44,7 +40,6 @@ export default function SectionText(props) {
                 rotation={[0, Math.PI, 0]}
                 letterSpacing={0.02}
                 textAlign='center'
-                ref={markerRef}
             >
                 Resume
             </Text>
@@ -58,7 +53,6 @@ export default function SectionText(props) {
                 rotation={[0, Math.PI / 0.92, 0]}
                 letterSpacing={0.02}
                 textAlign='center'
-                ref={markerRef}
             >
                 Contact
             </Text>
