@@ -39,7 +39,9 @@ export default function Contact() {
         <>
             <div className='section-div'>
                 <div className='fade-down delay-1 animated w-full h-full flex flex-col justify-center items-center'>
-                    <h1 className='stylized gold text-xl mb-4'>CONTACT ME</h1>
+                    <h1 className='stylized gold text-4xl md:text-6xl mb-4'>
+                        CONTACT ME
+                    </h1>
                     <form
                         className='h-auto p-4 w-5/6 md:w-1/2 flex flex-col items-center'
                         ref={form}
