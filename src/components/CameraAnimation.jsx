@@ -3,8 +3,6 @@ import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function CameraAnimation() {
-    const [position, setPosition] = useState([0, 0, 0]);
-
     const location = useLocation();
 
     useFrame((state) => {

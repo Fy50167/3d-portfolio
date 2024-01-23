@@ -51,7 +51,7 @@ export default function Home() {
                 }}
             >
                 <Suspense fallback={<Loader />}>
-                    <FirstPersonControls
+                    {/* <FirstPersonControls
                         activeLook
                         autoForward
                         enabled
@@ -63,7 +63,7 @@ export default function Home() {
                         movementSpeed={0.5}
                         verticalMax={3.141592653589793}
                         verticalMin={0}
-                    />
+                    /> */}
                     <LightScene />
                     <OverlayText />
                     <SectionText />
