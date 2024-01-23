@@ -116,6 +116,11 @@ textarea {
     color: black;
 }
 
+ul {
+    list-style-type: circle;
+    margin-left: 20px;
+}
+
 @media screen and (min-width: 800px) {
     .section-div {
         height: 75%;
