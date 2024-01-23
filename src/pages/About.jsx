@@ -37,9 +37,10 @@ export default function About() {
                         <p className='text-sm md:text-base'>
                             Full-stack web developer UCSD grad based in Southern
                             California. Specializing in front-end development
-                            via React but also proficient in multiple back-end
-                            technologies such as MySQL, NoSQL, GraphQL, and
-                            Python.
+                            via React alongside various React-based libraries
+                            like React Three Fiber and Redux. Also proficient in
+                            multiple back-end technologies such as MySQL, NoSQL,
+                            GraphQL, and Python.
                         </p>
                     </div>
                     <img

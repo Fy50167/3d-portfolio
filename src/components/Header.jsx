@@ -4,6 +4,9 @@ import LOGO from '../assets/images/KD_Logo.png';
 import DANCE from '../assets/music/Moonlight Dance (Mastered).mp3';
 import AVATAR from '../assets/images/KD_Avatar_Circle.png';
 import { Disclosure, Transition, Menu } from '@headlessui/react';
+import GITHUB from '../assets/images/github.png';
+import LINKEDIN from '../assets/images/linkedin.png';
+import UPWORK from '../assets/images/upwork-logo.png';
 import {
     Bars3Icon,
     SpeakerWaveIcon,
@@ -41,10 +44,6 @@ export default function Header() {
             musicPlayer.current.volume = 0.5;
         }
     };
-
-    function classNames(...classes) {
-        return classes.filter(Boolean).join(' ');
-    }
 
     useEffect(() => {
         if (hasPageBeenRendered.current) {
@@ -162,13 +161,12 @@ export default function Header() {
                                                         <a
                                                             href='https://www.linkedin.com/in/francis-yang-125082222/'
                                                             target='_blank'
-                                                            className={classNames(
-                                                                active
-                                                                    ? 'bg-gray-100'
-                                                                    : '',
-                                                                'block px-4 py-2 text-sm text-gray-700'
-                                                            )}
+                                                            className='px-4 py-2 text-sm text-gray-700 flex'
                                                         >
+                                                            <img
+                                                                src={LINKEDIN}
+                                                                className='social'
+                                                            />
                                                             LinkedIn
                                                         </a>
                                                     )}
@@ -178,13 +176,12 @@ export default function Header() {
                                                         <a
                                                             href='https://github.com/Fy50167'
                                                             target='_blank'
-                                                            className={classNames(
-                                                                active
-                                                                    ? 'bg-gray-100'
-                                                                    : '',
-                                                                'block px-4 py-2 text-sm text-gray-700'
-                                                            )}
+                                                            className='px-4 py-2 text-sm text-gray-700 flex'
                                                         >
+                                                            <img
+                                                                src={GITHUB}
+                                                                className='social'
+                                                            />
                                                             GitHub
                                                         </a>
                                                     )}
@@ -194,13 +191,12 @@ export default function Header() {
                                                         <a
                                                             href='https://www.upwork.com/freelancers/~019d1770b0e5419a80'
                                                             target='_blank'
-                                                            className={classNames(
-                                                                active
-                                                                    ? 'bg-gray-100'
-                                                                    : '',
-                                                                'block px-4 py-2 text-sm text-gray-700'
-                                                            )}
+                                                            className='px-4 py-2 text-sm text-gray-700 flex'
                                                         >
+                                                            <img
+                                                                src={UPWORK}
+                                                                className='social'
+                                                            />
                                                             Upwork
                                                         </a>
                                                     )}
