@@ -1,10 +1,11 @@
-import { Canvas, useFrame } from '@react-three/fiber';
-import { FirstPersonControls, Text } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { FirstPersonControls } from '@react-three/drei';
 import { Suspense, useRef } from 'react';
 import Auditorium from '../models/Auditorium';
 import Loader from '../components/Loader';
 import LightScene from '../components/LightScene';
 import OverlayText from '../components/OverlayText';
+import CameraAnimation from '../components/CameraAnimation';
 import SectionText from '../components/SectionText';
 import { Color } from 'three';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
@@ -50,7 +51,7 @@ export default function Home() {
                 }}
             >
                 <Suspense fallback={<Loader />}>
-                    {/* <FirstPersonControls
+                    <FirstPersonControls
                         activeLook
                         autoForward
                         enabled
@@ -62,10 +63,11 @@ export default function Home() {
                         movementSpeed={0.5}
                         verticalMax={3.141592653589793}
                         verticalMin={0}
-                    /> */}
+                    />
                     <LightScene />
                     <OverlayText />
                     <SectionText />
+                    <CameraAnimation />
 
                     <EffectComposer>
                         <Bloom mipmapBlur intensity={1.2} />
