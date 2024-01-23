@@ -16,17 +16,36 @@ import {
 export default function Header() {
     const [viewContent, setViewContent] = useState(true);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [duration, setDuration] = useState(0);
+    const [currentTime, setCurrentTime] = useState(0);
+
+    const musicPlayer = useRef();
 
     const hideContent = () => {
         setViewContent(!viewContent);
+    };
+
+    const setTimes = () => {
+        setDuration(Math.floor(musicPlayer.current.duration));
+        setCurrentTime(Math.floor(musicPlayer.current.currentTime));
     };
 
     const playPause = () => {
         setIsPlaying(!isPlaying);
     };
 
+    useEffect(() => {
+        if (currentTime === duration && duration !== 0) {
+        }
+    }, [currentTime]);
+
     return (
         <Disclosure as='nav' className='bg-gray-800 w-full z-50'>
+            <audio
+                src={DANCE}
+                ref={musicPlayer}
+                onLoadedMetadata={setTimes}
+            ></audio>
             {({ open }) => (
                 <>
                     <div className='mx-auto w-full px-2 sm:px-6 lg:px-8'>
