@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import swal from '@sweetalert/with-react';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 export default function Contact() {
     document.title = 'Francis Yang - Contact';
@@ -10,12 +11,11 @@ export default function Contact() {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        swal({
-            title: 'Your message has been received!',
-            text: "I'll get back to you as soon as possible.",
-            buttons: {
-                cancel: 'Close',
-            },
+        Swal.fire({
+            title: 'Message received!',
+            text: "I'll get back to you shortly.",
+            icon: 'success',
+            confirmButtonText: 'Confirm',
         });
 
         emailjs
@@ -38,16 +38,14 @@ export default function Contact() {
     return (
         <>
             <div className='section-div'>
-                <div className='fade-down delay-1 animated w-100 h-auto'>
-                    <h1 className='stylized gold large-text mb-4'>
-                        CONTACT ME
-                    </h1>
+                <div className='fade-down delay-1 animated w-full h-full flex flex-col justify-center items-center'>
+                    <h1 className='stylized gold text-xl mb-4'>CONTACT ME</h1>
                     <form
-                        className='h-auto m-auto p-4 contact-wrapper'
+                        className='h-auto p-4 w-5/6 md:w-1/2 flex flex-col items-center'
                         ref={form}
                         onSubmit={sendEmail}
                     >
-                        <div className='form-group mb-3'>
+                        <div className='form-group w-full flex flex-col justify-evenly-items-center mb-3'>
                             <label className='mb-3'>Name</label>
                             <input
                                 className='form-control'
@@ -55,7 +53,7 @@ export default function Contact() {
                                 name='user_name'
                             />
                         </div>
-                        <div className='form-group mb-3'>
+                        <div className='form-group w-full flex flex-col justify-evenly-items-center mb-3'>
                             <label className='mb-3'>Email Address</label>
                             <input
                                 className='form-control'
@@ -63,7 +61,7 @@ export default function Contact() {
                                 name='user_email'
                             />
                         </div>
-                        <div className='form-group mb-3'>
+                        <div className='form-group w-full flex flex-col justify-evenly-items-center mb-3'>
                             <label className='mb-3'>Message</label>
                             <textarea
                                 className='form-control'
