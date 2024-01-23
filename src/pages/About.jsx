@@ -8,6 +8,16 @@ import { CSSTransition } from 'react-transition-group';
 export default function About() {
     document.title = 'Francis Yang - About';
 
+    const [isScroll, setIsScroll] = useState(true);
+
+    const changeScroll = () => {
+        setIsScroll(!isScroll);
+        const upArrow = document.querySelector('#arrow-up');
+        if (!upArrow.classList.contains('display')) {
+            upArrow.classList.add('display');
+        }
+    };
+
     return (
         <>
             <div className='section-div'>
