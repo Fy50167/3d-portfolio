@@ -2,7 +2,7 @@ import Navigation from './Navigation';
 import { useState } from 'react';
 import LOGO from '../assets/images/KD_Logo.png';
 import ME from '../assets/images/Me.jpg';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { Disclosure } from '@headlessui/react';
 import {
     Bars3Icon,
     SpeakerWaveIcon,
@@ -25,7 +25,7 @@ export default function Header() {
     };
 
     return (
-        <Disclosure as='nav' className='bg-gray-800 w-full'>
+        <Disclosure as='nav' className='bg-gray-800 w-full z-50'>
             {({ open }) => (
                 <>
                     <div className='mx-auto w-full px-2 sm:px-6 lg:px-8'>

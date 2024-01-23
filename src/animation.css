@@ -1,3 +1,32 @@
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-100%);
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        visibility: visible;
+    }
+}
+
+.fade-down {
+    animation: fadeDown 1s;
+    -webkit-animation: fadeDown 1s;
+    -moz-animation: fadeDown 1s;
+    -o-animation: fadeDown 1s;
+    -ms-animation: fadeDown 1s;
+}
+
+.lower-content {
+    top: 0;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    top: 4.7rem;
+}
+
 .scroll-upper-enter {
     opacity: 0;
     transform: translateY(-100%);
@@ -65,4 +94,59 @@
 .animated {
     animation-fill-mode: forwards;
     visibility: hidden;
+}
+
+.delay-0 {
+    animation-delay: 0.25s;
+}
+
+.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.delay-2 {
+    animation-delay: 0.75s;
+}
+
+.delay-3 {
+    animation-delay: 1s;
+}
+
+.delay-4 {
+    animation-delay: 1.25s;
+}
+
+.delay-5 {
+    animation-delay: 1.5s;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
