@@ -88,7 +88,7 @@ nav {
 .btn-arrow {
     border-radius: 0;
     padding: 0 3%;
-    bottom: 10%;
+    bottom: 3%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,12 +96,21 @@ nav {
 
 .arrow-up {
     display: none;
-    top: 20%;
+    top: 3%;
     bottom: unset;
 }
 
 @media screen and (min-width: 800px) {
     .portrait {
         width: 25%;
+    }
+
+    .btn-arrow {
+        bottom: 15%;
+    }
+
+    .arrow-up {
+        top: 20%;
+        bottom: unset;
     }
 }

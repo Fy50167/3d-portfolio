@@ -34,7 +34,7 @@ export default function About() {
                     </button>
                     <div className='fade-down delay-1 animated w-full md:w-1/4'>
                         <h2 className='stylized'>About Me</h2>
-                        <p>
+                        <p className='text-sm md:text-base'>
                             Full-stack web developer UCSD grad based in Southern
                             California. Specializing in front-end development
                             via React but also proficient in multiple back-end
@@ -49,7 +49,7 @@ export default function About() {
                     />
                     <div className='fade-down delay-5 animated w-full md:w-1/4'>
                         <h2 className='stylized'>My Background</h2>
-                        <p>
+                        <p className='text-sm md:text-base'>
                             Graduated from the University of Southern
                             California, San Diego, as a double major in
                             Cognitive Neuroscience as well as Music. Entered
@@ -78,35 +78,29 @@ export default function About() {
                     </button>
                     <div className='w-full md:w-1/4'>
                         <h2 className='stylized'>Experience</h2>
-                        <p>
-                            Since I developed an interested in computer science
-                            so late (around halfway through my junior year of
-                            college), I wasn't able to take many classes
-                            concerning it if I wanted to graduate on time.
-                            Instead, I learned basic Front-End languages such as
-                            HTML, CSS, Javascript, and Liquid on my own during
-                            my senior year, and took a coding bootcamp from UC
-                            Berkeley shortly after graduation to gain some
-                            experience with the Back-End as well. Currently, I'm
-                            spending my time making projects and studying data
+                        <p className='text-sm md:text-base'>
+                            Learned standard front-end tools such as HTML, CSS,
+                            and Javascript during senior year. Additionally took
+                            a full-stack bootcamp from UC Berkeley following
+                            graduation to gain experience with the back-end as
+                            well. Currently, building projects and studying data
                             algorithms in preparation for job interviews.
                         </p>
                     </div>
                     <img className='portrait' src={LOGO} alt='large-logo' />
                     <div className='w-full md:w-1/4'>
                         <h2 className='stylized'>Freelance Work</h2>
-                        <p>
-                            Throughout my senior year of college, I used the
-                            languages that I had learned on my own to act as a
-                            freelance web developer on Upwork for people looking
-                            to start E-Commerce businesses via the Shopify
-                            platform. While the work that I did wasn't
-                            particularly advanced, it did at the very least
-                            provide me with some real work experience
-                            (communicating with clients/collaborators, working
-                            with deadlines, etc.) and allowed me to fund my
-                            bootcamp. You can view all of my reviews (which are
-                            all 5 stars) in my Upwork profile via my socials!
+                        <p className='text-sm md:text-base'>
+                            Used the languages I was learning during senior year
+                            to act as a freelance web developer for people via
+                            the Shopify platform. This work allowed me to
+                            reinforce my front-end skills, provided me with some
+                            real work experience (communicating with
+                            clients/collaborators, working with deadlines,
+                            etc.), and allowed me to fund my bootcamp. You can
+                            view all of my reviews (which are all 5 stars) in my
+                            Upwork profile via my socials (press the image in
+                            the top right)!
                         </p>
                     </div>
                 </div>
