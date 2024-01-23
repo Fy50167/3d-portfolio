@@ -1,7 +1,8 @@
 import Navigation from './Navigation';
 import { useState } from 'react';
 import LOGO from '../assets/images/KD_Logo.png';
-import ME from '../assets/images/Me.jpg';
+import DANCE from '../assets/music/Moonlight Dance (Mastered).mp3';
+import AVATAR from '../assets/images/KD_Avatar_Circle.png';
 import { Disclosure } from '@headlessui/react';
 import {
     Bars3Icon,
@@ -94,8 +95,8 @@ export default function Header() {
 
                                 <img
                                     className='h-8 w-8 rounded-full ml-4'
-                                    src={ME}
-                                    alt='Image of me'
+                                    src={AVATAR}
+                                    alt='Avatar image'
                                 />
                             </div>
                         </div>

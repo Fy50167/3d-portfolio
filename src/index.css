@@ -123,11 +123,17 @@ nav {
     }
 
     .arrow-up {
-        top: 20%;
+        top: 15%;
         bottom: unset;
     }
 
     .lower-content {
         top: 9rem;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .section-div {
+        width: 75%;
     }
 }
