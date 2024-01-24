@@ -8,6 +8,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
 import Projects from './pages/Projects';
+import store from './redux/store';
+import { Provider } from 'react-redux';
 
 const router = createBrowserRouter([
     {
@@ -36,5 +38,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <RouterProvider router={router} />
+    <Provider store={store}>
+        <RouterProvider router={router} />
+    </Provider>
 );

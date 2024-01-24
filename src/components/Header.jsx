@@ -7,6 +7,8 @@ import { Disclosure, Transition, Menu } from '@headlessui/react';
 import GITHUB from '../assets/images/github.png';
 import LINKEDIN from '../assets/images/linkedin.png';
 import UPWORK from '../assets/images/upwork-logo.png';
+import { useSelector, useDispatch } from 'react-redux';
+import { setTrue, setFalse } from '../redux/viewContent';
 import {
     Bars3Icon,
     SpeakerWaveIcon,
@@ -17,7 +19,8 @@ import {
 } from '@heroicons/react/24/outline';
 
 export default function Header() {
-    const [viewContent, setViewContent] = useState(true);
+    const viewContent = useSelector((state) => state.content.value);
+    const dispatch = useDispatch();
     const [isPlaying, setIsPlaying] = useState(false);
     const [duration, setDuration] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
@@ -26,7 +29,11 @@ export default function Header() {
     const hasPageBeenRendered = useRef(false);
 
     const hideContent = () => {
-        setViewContent(!viewContent);
+        if (viewContent) {
+            dispatch(setFalse());
+        } else {
+            dispatch(setTrue());
+        }
     };
 
     const setTimes = () => {
