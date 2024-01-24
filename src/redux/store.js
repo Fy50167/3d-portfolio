@@ -3,6 +3,6 @@ import viewContent from './viewContent';
 
 export default configureStore({
   reducer: {
-    content: viewContent
+    content: viewContent,
   },
 })
