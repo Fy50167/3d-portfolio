@@ -2,15 +2,21 @@ import { Canvas } from '@react-three/fiber';
 import { FirstPersonControls } from '@react-three/drei';
 import { Suspense, useRef } from 'react';
 import Auditorium from '../models/Auditorium';
-import Loader from '../components/Loader';
-import LightScene from '../components/LightScene';
-import CameraAnimation from '../components/CameraAnimation';
-import ThreeDText from '../components/3DText';
+import Loader from './Loader';
+import LightScene from './LightScene';
+import CameraAnimation from './CameraAnimation';
+import ThreeDText from './3DText';
+import { useLocation } from 'react-router-dom';
 import { Color } from 'three';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
 import { useControls } from 'leva';
 
 export default function Home() {
+    const location = useLocation();
+
+    const cameraPosition =
+        location.pathname === '/resume' ? [0, 150, 1250] : [50, 2100, -1850];
+
     const adjustModel = () => {
         let screenScale = null;
         let screenPosition = [0, 0, 0];
@@ -44,7 +50,7 @@ export default function Home() {
                 camera={{
                     near: 0.1,
                     far: 20000,
-                    position: [50, 2100, -1850],
+                    position: cameraPosition,
                     fov: [50],
                     rotation: [Math.PI / 8, Math.PI, 0],
                 }}

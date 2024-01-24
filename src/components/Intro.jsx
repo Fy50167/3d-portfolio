@@ -7,8 +7,11 @@ export default function Intro(props) {
 
     const enter = () => {
         props.setHasEntered(true);
-        dispatch(setTrue());
         dispatch(musicTrue());
+        const timeout = setTimeout(() => {
+            dispatch(setTrue());
+        }, 2000);
+        return () => clearTimeout(timeout);
     };
 
     return (

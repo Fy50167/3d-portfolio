@@ -1,4 +1,4 @@
-import Home from '../pages/Home';
+import Home from './Home';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import { CSSTransition } from 'react-transition-group';

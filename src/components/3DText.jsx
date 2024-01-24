@@ -26,7 +26,7 @@ export default function ThreeDText() {
                 letterSpacing={0.02}
                 textAlign='center'
             >
-                Resumé
+                About Me
             </Text>
 
             <Text

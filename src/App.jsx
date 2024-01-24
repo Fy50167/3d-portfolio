@@ -9,21 +9,15 @@ export default function App() {
 
     return (
         <>
-            <main>
-                {!hasEntered ? (
-                    <Intro setHasEntered={setHasEntered} />
-                ) : (
+            {!hasEntered ? (
+                <Intro setHasEntered={setHasEntered} />
+            ) : (
+                <main>
                     <>
-                        <CSSTransition
-                            in={hasEntered}
-                            timeout={1000}
-                            classNames='content-fade'
-                        >
-                            <MainContent />
-                        </CSSTransition>
+                        <MainContent />
                     </>
-                )}
-            </main>
+                </main>
+            )}
         </>
     );
 }
