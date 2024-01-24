@@ -9,7 +9,6 @@ import { useState } from 'react';
 export default function App() {
     const viewContent = useSelector((state) => state.content.value);
     const [hasEntered, setHasEntered] = useState(false);
-    console.log(hasEntered);
 
     return (
         <>

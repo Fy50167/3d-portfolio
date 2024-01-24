@@ -6,15 +6,15 @@ export const playMusic = createSlice({
     value: false,
   },
   reducers: {
-    setTrue: (state) => {
+    musicTrue: (state) => {
       state.value = true;
     },
-    setFalse: (state) => {
+    musicFalse: (state) => {
       state.value = false;
     }
 }
 })
 
-export const { setTrue, setFalse } = playMusic.actions
+export const { musicTrue, musicFalse } = playMusic.actions
 
 export default playMusic.reducer

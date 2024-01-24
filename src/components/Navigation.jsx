@@ -10,7 +10,7 @@ export default function Navigation() {
                 Work
             </NavLink>
             <NavLink id='resume' to='/resume' className='gold nav-link'>
-                Resume
+                Resumé
             </NavLink>
             <NavLink id='contact' to='/contact' className='gold nav-link'>
                 Contact

@@ -9,6 +9,7 @@ import LINKEDIN from '../assets/images/linkedin.png';
 import UPWORK from '../assets/images/upwork-logo.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { setTrue, setFalse } from '../redux/viewContent';
+import { musicTrue, musicFalse } from '../redux/playMusic';
 import {
     Bars3Icon,
     SpeakerWaveIcon,
@@ -20,8 +21,8 @@ import {
 
 export default function Header() {
     const viewContent = useSelector((state) => state.content.value);
+    const isPlaying = useSelector((state) => state.isPlaying.value);
     const dispatch = useDispatch();
-    const [isPlaying, setIsPlaying] = useState(true);
     const [duration, setDuration] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
 
@@ -39,16 +40,17 @@ export default function Header() {
     const setTimes = () => {
         setDuration(Math.floor(musicPlayer.current.duration));
         setCurrentTime(Math.floor(musicPlayer.current.currentTime));
-        musicPlayer.current.pause();
+        musicPlayer.current.play();
         musicPlayer.current.volume = 0.5;
     };
 
     const playPause = () => {
-        setIsPlaying(!isPlaying);
         if (isPlaying) {
+            dispatch(musicFalse());
             musicPlayer.current.pause();
             musicPlayer.current.volume = 0.5;
         } else {
+            dispatch(musicTrue());
             musicPlayer.current.play();
             musicPlayer.current.volume = 0.5;
         }
@@ -58,7 +60,7 @@ export default function Header() {
         if (hasPageBeenRendered.current) {
             musicPlayer.current.play();
             musicPlayer.current.volume = 0.5;
-            setIsPlaying(true);
+            dispatch(musicTrue());
         }
         hasPageBeenRendered.current = true;
     }, []);

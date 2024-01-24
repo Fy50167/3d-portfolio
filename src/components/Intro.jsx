@@ -1,13 +1,14 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setTrue } from '../redux/viewContent';
+import { musicTrue } from '../redux/playMusic';
 
 export default function Intro(props) {
-    const viewContent = useSelector((state) => state.content.value);
     const dispatch = useDispatch();
 
     const enter = () => {
         props.setHasEntered(true);
         dispatch(setTrue());
+        dispatch(musicTrue());
     };
 
     return (
