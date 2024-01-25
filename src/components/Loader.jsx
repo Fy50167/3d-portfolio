@@ -1,6 +1,8 @@
 import { Html } from '@react-three/drei';
 
 export default function Loader() {
+    console.log('loader hit');
+
     return (
         <Html>
             <div className='w-screen h-screen flex flex-col items-center justify-center bg-black text-white'>

@@ -1,8 +1,7 @@
 import { Canvas } from '@react-three/fiber';
-import { FirstPersonControls } from '@react-three/drei';
+import { FirstPersonControls, Loader } from '@react-three/drei';
 import { Suspense, useRef } from 'react';
 import Auditorium from '../models/Auditorium';
-import Loader from './Loader';
 import LightScene from './LightScene';
 import CameraAnimation from './CameraAnimation';
 import ThreeDText from './3DText';
@@ -55,7 +54,7 @@ export default function Home() {
                     rotation: [Math.PI / 8, Math.PI, 0],
                 }}
             >
-                <Suspense fallback={<Loader />}>
+                <Suspense fallback={null}>
                     {/* <FirstPersonControls
                         activeLook
                         autoForward
@@ -83,6 +82,7 @@ export default function Home() {
                     />
                 </Suspense>
             </Canvas>
+            <Loader />
         </section>
     );
 }
