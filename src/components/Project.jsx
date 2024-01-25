@@ -4,7 +4,7 @@ export default function Projects(props) {
     const renderLink = () => {
         if (deploy) {
             return (
-                <div>
+                <div className='border-top w-full'>
                     <a
                         target='_blank'
                         className='text-sm gold stylized'
@@ -18,7 +18,7 @@ export default function Projects(props) {
     };
 
     return (
-        <div className='m-6 bg-white card text-black card-round shadow-lg relative'>
+        <div className='m-6 bg-white card text-black rounded shadow-lg relative'>
             <a
                 target='blank'
                 href={url}
@@ -33,7 +33,7 @@ export default function Projects(props) {
                 <div className='font-bold text-xl mb-2 text-black'>{name}</div>
                 <p className='text-sm text-black'>{description}</p>
             </div>
-            <div className='px-6 pt-4 pb-2 absolute bottom-0'>
+            <div className='px-6 pt-4 pb-2 w-full absolute bottom-0'>
                 {techstack.map((language) => (
                     <span
                         key={techstack.indexOf(language)}
@@ -42,8 +42,8 @@ export default function Projects(props) {
                         {language}
                     </span>
                 ))}
+                {renderLink()}
             </div>
-            {renderLink()}
         </div>
     );
 }
