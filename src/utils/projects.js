@@ -6,17 +6,15 @@ import UPWORK from '../assets/images/lumebox.png';
 const projects = [
     {
         name: "The Lumebox",
-        techstack: "Shopify Liquid",
+        techstack: ['Liquid'],
         url: "https://github.com/Fy50167/lumebox",
         deploy: "https://www.thelumebox.com",
         background: UPWORK,
-        description: "A Shopify E-Commerce website built as part of a Freelance web development job for the Red Light Therapy company Lumebox. Although Shopify's built-in customizer was partially used in order to built the site, \
-        because the client already had a design made for the store by a professional graphic designer before hiring me much of it had to be built from the ground up due to not being conducive with the templates natively available \
-        in the customizer. Note that small changes have been made to the site since I stopped working on it, but overall the code remains largely the same."
+        description: "Full store buildout for the Red Light Therapy company Lumebox. Although the Shopify Customizer was used for more advanced features like the cart, the vast majority of the visual components were built from the ground up. Note that small changes have been made to the site since I stopped working on it, but overall the code remains largely the same."
     },
     {
         name: "Space Blog",
-        techstack: "GraphQl, MERN",
+        techstack: ['GraphQL, MERN'],
         url: "https://github.com/Fy50167/space-blog",
         deploy: "https://super-space-blog-8209078db6df.herokuapp.com",
         background: SPACE,
@@ -26,7 +24,7 @@ const projects = [
     },
     {
         name: "Badge Generator",
-        techstack: "C#",
+        techstack: ['C#'],
         url: "https://github.com/Fy50167/c--badge-maker",
         background: BADGE,
         description: "Basic C# application meant to demonstrate a rudimentary knowledge of C# fundamentals. Allows users to run the application and generate either a custom badge or random ones via an API. If choosing to make a \
@@ -35,7 +33,7 @@ const projects = [
     },
     {
         name: 'Social Network Backend API',
-        techstack: "Mongo DB, Express, Mongoose",
+        techstack: ['MongoDB', 'Mongoose'],
         url: "https://github.com/Fy50167/social-network-api",
         background: BACKEND,
         description: "A purely back-end focused application revolving around the usage of NoSQL, specifically MongoDB. Although the application has no deployed front-end side, a demo view can be viewed in the repository README. \

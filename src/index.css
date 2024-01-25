@@ -52,7 +52,7 @@ nav {
     width: 90%;
     height: 90%;
     background-color: rgba(52, 52, 52, 0.8);
-    border-radius: 5%;
+    border-radius: 2.5%;
     position: absolute;
     top: 4.7rem;
     left: 0;
@@ -125,6 +125,38 @@ ul {
     width: 20px;
     width: 20px;
     margin-right: 10px;
+}
+
+.pop-out:hover {
+    transform: scale(1.1);
+}
+
+.pop-out {
+    transition: 0.2s;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 50%;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #414141;
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 20px;
+}
+
+::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 20px;
 }
 
 @media screen and (min-width: 800px) {
