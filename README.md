@@ -8,7 +8,7 @@
 
 ## Description
 
-3D portfolio website built in React using the React Three Fiber library alongside additional Fiber dependencies like drei and postprocessing. Features standard portfolio information like an about me, projects, and resume sections, as well as a functioning contact page. If you have any questions/want to send me an inquiry, do so through the website!
+3D portfolio website built in React using the React Three Fiber library alongside additional Fiber dependencies like drei and postprocessing. Features standard portfolio information like an about me, projects, and resume sections, as well as a functioning contact page. Sodcial links can be accessed by pressing the avatar icon the top right. If you have any questions/want to send me an inquiry, do so through the website!
 
 ## Usage
 
