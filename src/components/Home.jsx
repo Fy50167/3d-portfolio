@@ -45,17 +45,17 @@ export default function Home() {
 
     return (
         <section className='w-full h-screen relative'>
-            <Canvas
-                className='w-full h-screen bg-transparent'
-                camera={{
-                    near: 0.1,
-                    far: 20000,
-                    position: cameraPosition,
-                    fov: [50],
-                    rotation: [Math.PI / 8, Math.PI, 0],
-                }}
-            >
-                <Suspense fallback={<Loader />}>
+            <Suspense fallback={<Loader />}>
+                <Canvas
+                    className='w-full h-screen bg-transparent'
+                    camera={{
+                        near: 0.1,
+                        far: 20000,
+                        position: cameraPosition,
+                        fov: [50],
+                        rotation: [Math.PI / 8, Math.PI, 0],
+                    }}
+                >
                     {/* <FirstPersonControls
                         activeLook
                         autoForward
@@ -81,8 +81,8 @@ export default function Home() {
                         scale={auditoriumScale}
                         rotation={auditoriumRotation}
                     />
-                </Suspense>
-            </Canvas>
+                </Canvas>
+            </Suspense>
         </section>
     );
 }
