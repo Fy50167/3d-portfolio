@@ -4,19 +4,25 @@ export default function Projects(props) {
     const renderLink = () => {
         if (deploy) {
             return (
-                <a target='_blank' className='gold' href={deploy}>
-                    Click me to go to the app!
-                </a>
+                <div>
+                    <a
+                        target='_blank'
+                        className='text-sm gold stylized'
+                        href={deploy}
+                    >
+                        DEPLOYED LINK
+                    </a>
+                </div>
             );
         }
     };
 
     return (
-        <div className='m-6 bg-white card text-black h-auto rounded shadow-lg relative'>
+        <div className='m-6 bg-white card text-black card-round shadow-lg relative'>
             <a
                 target='blank'
                 href={url}
-                className='w-full h-1/3 pop-out rounded'
+                className='w-full h-1/3 md:h-1/2 pop-out rounded'
             >
                 <img
                     src={background}
@@ -37,6 +43,7 @@ export default function Projects(props) {
                     </span>
                 ))}
             </div>
+            {renderLink()}
         </div>
     );
 }

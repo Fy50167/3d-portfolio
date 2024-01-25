@@ -162,6 +162,7 @@ ul {
 .card {
     width: 275px;
     min-width: 275px;
+    height: 450px;
 }
 
 .aligner {
@@ -170,6 +171,11 @@ ul {
     height: 0;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+}
+
+.card-round {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 
 @media screen and (min-width: 768px) {
@@ -196,13 +202,18 @@ ul {
     }
 
     .card {
-        width: 400px;
-        min-width: 400px;
+        width: 380px;
+        min-width: 380px;
+        height: 450px;
     }
 
     .aligner {
-        width: 400px;
-        min-width: 400px;
+        width: 380px;
+        min-width: 380px;
+    }
+
+    .pop-out {
+        height: 200px;
     }
 }
 
