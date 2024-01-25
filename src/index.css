@@ -177,6 +177,10 @@ ul {
     border-top: 1px solid grey;
 }
 
+.caption {
+    max-width: 80%;
+}
+
 @media screen and (min-width: 768px) {
     .section-div {
         height: 75%;
