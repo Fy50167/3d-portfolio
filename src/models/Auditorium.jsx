@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useGLTF, MeshReflectorMaterial } from '@react-three/drei';
-import auditoriumScene from '../assets/3d/auditorium.glb';
+import auditoriumScene from '../assets/3d/auditoriumCompressed.glb';
 
 export default function Auditorium(props) {
     const auditoriumRef = useRef();
@@ -11,6 +11,24 @@ export default function Auditorium(props) {
             <group scale={100}>
                 <group rotation={[-Math.PI / 2, 0, 0]} scale={0.128}>
                     <group rotation={[Math.PI / 2, 0, 0]}>
+                        <group position={[0, -24.771, 87.956]}>
+                            <mesh
+                                castShadow
+                                receiveShadow
+                                geometry={
+                                    nodes.polySurface4058_lambert64_0.geometry
+                                }
+                                material={materials.lambert64}
+                            />
+                            <mesh
+                                castShadow
+                                receiveShadow
+                                geometry={
+                                    nodes.polySurface4058_lambert64_0_1.geometry
+                                }
+                                material={materials.lambert64}
+                            />
+                        </group>
                         <group scale={100}>
                             <mesh
                                 castShadow
@@ -136,8 +154,22 @@ export default function Auditorium(props) {
                             material={materials.lambert75}
                             scale={[0.989, 1, 1]}
                         />
-
-                        {/* // Piano follows */}
+                        <mesh
+                            castShadow
+                            receiveShadow
+                            geometry={
+                                nodes.polySurface4100_lambert67_0.geometry
+                            }
+                            material={materials.lambert67}
+                        />
+                        <mesh
+                            castShadow
+                            receiveShadow
+                            geometry={
+                                nodes.polySurface4324_lambert80_0.geometry
+                            }
+                            material={materials.lambert80}
+                        />
                         <mesh
                             castShadow
                             receiveShadow
@@ -184,7 +216,6 @@ export default function Auditorium(props) {
                             rotation={[0, 1.528, 0]}
                             scale={1.547}
                         />
-
                         <mesh
                             castShadow
                             receiveShadow
@@ -233,7 +264,22 @@ export default function Auditorium(props) {
                             }
                             material={materials.lambert72}
                         />
-
+                        <mesh
+                            castShadow
+                            receiveShadow
+                            geometry={
+                                nodes.polySurface4325_lambert82_0.geometry
+                            }
+                            material={materials.lambert82}
+                        />
+                        <mesh
+                            castShadow
+                            receiveShadow
+                            geometry={
+                                nodes.polySurface4326_lambert83_0.geometry
+                            }
+                            material={materials.lambert83}
+                        />
                         <mesh
                             castShadow
                             receiveShadow
@@ -241,6 +287,14 @@ export default function Auditorium(props) {
                                 nodes.polySurface4295_lambert77_0.geometry
                             }
                             material={materials.lambert77}
+                        />
+                        <mesh
+                            castShadow
+                            receiveShadow
+                            geometry={
+                                nodes.polySurface4296_lambert79_0.geometry
+                            }
+                            material={materials.lambert79}
                         />
                     </group>
                 </group>
