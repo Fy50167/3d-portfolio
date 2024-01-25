@@ -159,7 +159,20 @@ ul {
     margin-top: 20px;
 }
 
-@media screen and (min-width: 800px) {
+.card {
+    width: 275px;
+    min-width: 275px;
+}
+
+.aligner {
+    width: 275px;
+    min-width: 275px;
+    height: 0;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
     .section-div {
         height: 75%;
         top: 9rem;
@@ -180,6 +193,16 @@ ul {
 
     .lower-content {
         top: 9rem;
+    }
+
+    .card {
+        width: 400px;
+        min-width: 400px;
+    }
+
+    .aligner {
+        width: 400px;
+        min-width: 400px;
     }
 }
 

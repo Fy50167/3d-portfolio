@@ -14,7 +14,7 @@ const projects = [
     },
     {
         name: "Space Blog",
-        techstack: ['GraphQL, MERN'],
+        techstack: ['GraphQL', 'MERN'],
         url: "https://github.com/Fy50167/space-blog",
         deploy: "https://super-space-blog-8209078db6df.herokuapp.com",
         background: SPACE,

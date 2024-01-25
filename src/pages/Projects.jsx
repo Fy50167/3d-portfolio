@@ -5,7 +5,7 @@ export default function Projects() {
     return (
         <>
             <div className='section-div'>
-                <div className='h-full w-full flex flex-wrap p-4 overflow-auto justify-between'>
+                <div className='h-full w-full animated fade-in flex flex-wrap p-4 overflow-auto justify-center'>
                     {projects.map((project) => (
                         <Project
                             key={projects.indexOf(project)}
@@ -17,6 +17,9 @@ export default function Projects() {
                             description={project.description}
                         />
                     ))}
+                    <div className='aligner'></div>
+                    <div className='aligner'></div>
+                    <div className='aligner'></div>
                 </div>
             </div>
         </>

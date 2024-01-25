@@ -12,7 +12,7 @@ export default function Projects(props) {
     };
 
     return (
-        <div className='m-6 bg-white w-1/4 text-black h-auto rounded shadow-lg'>
+        <div className='m-6 bg-white card text-black h-auto rounded shadow-lg relative'>
             <a
                 target='blank'
                 href={url}
@@ -27,7 +27,7 @@ export default function Projects(props) {
                 <div className='font-bold text-xl mb-2 text-black'>{name}</div>
                 <p className='text-sm text-black'>{description}</p>
             </div>
-            <div className='px-6 pt-4 pb-2'>
+            <div className='px-6 pt-4 pb-2 absolute bottom-0'>
                 {techstack.map((language) => (
                     <span
                         key={techstack.indexOf(language)}
