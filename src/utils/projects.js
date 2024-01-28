@@ -2,7 +2,7 @@ import SPACE from '../assets/images/space.png';
 import BADGE from '../assets/images/badge.png';
 import BACKEND from '../assets/images/backend.png';
 import UPWORK from '../assets/images/lumebox.png';
-import CHARACTER from '../assets/images/animated-character.png';
+import CHARACTER from '../assets/images/animated-character.jpeg';
 
 const projects = [
     {
