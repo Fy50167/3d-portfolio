@@ -2,8 +2,17 @@ import SPACE from '../assets/images/space.png';
 import BADGE from '../assets/images/badge.png';
 import BACKEND from '../assets/images/backend.png';
 import UPWORK from '../assets/images/lumebox.png';
+import CHARACTER from '../assets/images/animated-character.png';
 
 const projects = [
+    {
+        name: '3D Animated Character',
+        techstack: ['React Three Fiber'],
+        url: 'https://github.com/Fy50167/3d-animated-character',
+        deploy: 'https://fy50167.github.io/3d-animated-character/',
+        background: CHARACTER,
+        description: 'Animated, customizable 3D character built using R3F. Character animations can be swapped with the bottom right controls while camera angles and character colors can be chosen with the top right controls.'
+    },
     {
         name: "The Lumebox",
         techstack: ['Liquid'],
