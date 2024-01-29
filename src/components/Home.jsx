@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 import { FirstPersonControls } from '@react-three/drei';
-import { LoadScreen } from './Loader';
+import LoadScreen from './LoadScreen';
 import { Suspense, useRef } from 'react';
 import Auditorium from '../models/Auditorium';
 import LightScene from './LightScene';
