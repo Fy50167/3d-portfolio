@@ -1,5 +1,6 @@
 import { Canvas } from '@react-three/fiber';
-import { FirstPersonControls, Loader } from '@react-three/drei';
+import { FirstPersonControls } from '@react-three/drei';
+import { LoadScreen } from './Loader';
 import { Suspense, useRef } from 'react';
 import Auditorium from '../models/Auditorium';
 import LightScene from './LightScene';
@@ -68,21 +69,20 @@ export default function Home() {
                         verticalMax={3.141592653589793}
                         verticalMin={0}
                     /> */}
-                    <LightScene />
                     <ThreeDText />
                     <CameraAnimation />
-
-                    <EffectComposer>
-                        <Bloom mipmapBlur intensity={1.2} />
-                    </EffectComposer>
                     <Auditorium
                         position={auditoriumPosition}
                         scale={auditoriumScale}
                         rotation={auditoriumRotation}
                     />
                 </Suspense>
+                <LightScene />
+                <EffectComposer>
+                    <Bloom mipmapBlur intensity={1.2} />
+                </EffectComposer>
             </Canvas>
-            <Loader />
+            <LoadScreen />
         </section>
     );
 }
