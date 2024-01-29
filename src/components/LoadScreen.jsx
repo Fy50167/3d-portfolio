@@ -1,12 +1,20 @@
 import { useProgress } from '@react-three/drei';
+import { useDispatch } from 'react-redux';
+import { setTrue } from '../redux/viewContent';
+import { musicTrue } from '../redux/playMusic';
 import { useEffect } from 'react';
 
 export default function LoadScreen() {
     const { progress } = useProgress();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if (progress == 100) {
-            console.log('hit');
+            dispatch(musicTrue());
+            const timeout = setTimeout(() => {
+                dispatch(setTrue());
+            }, 2000);
+            return () => clearTimeout(timeout);
         }
     }, [progress]);
 

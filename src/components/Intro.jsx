@@ -1,17 +1,6 @@
-import { useDispatch } from 'react-redux';
-import { setTrue } from '../redux/viewContent';
-import { musicTrue } from '../redux/playMusic';
-
 export default function Intro(props) {
-    const dispatch = useDispatch();
-
     const enter = () => {
         props.setHasEntered(true);
-        const timeout = setTimeout(() => {
-            dispatch(setTrue());
-            dispatch(musicTrue());
-        }, 2000);
-        return () => clearTimeout(timeout);
     };
 
     return (
