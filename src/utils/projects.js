@@ -3,8 +3,18 @@ import BADGE from '../assets/images/badge.png';
 import BACKEND from '../assets/images/backend.png';
 import UPWORK from '../assets/images/lumebox.png';
 import CHARACTER from '../assets/images/animated-character.jpeg';
+import PYTHON from '../assets/images/tech-newsfeed.jpeg';
+import CREATOR from '../assets/images/character-creator.jpeg';
 
 const projects = [
+    {
+        name: '3D Character Creator',
+        techstack: ['React Three Fiber, MongoDB, Express'],
+        url: 'https://github.com/Fy50167/character-creator',
+        deploy: 'https://my-character-creator-4239e0cc94e4.herokuapp.com',
+        background: CREATOR,
+        description: 'Full-stack application built with Vite + R3F on the frontend and MongoDB and node.js on the backend. Users can create 3D characters, view community creations, and customize their profile with profile picture and taglines.'
+    },
     {
         name: '3D Animated Character',
         techstack: ['React Three Fiber'],
@@ -43,6 +53,13 @@ const projects = [
         url: "https://github.com/Fy50167/social-network-api",
         background: BACKEND,
         description: "Back-end application that simulates various social media platforms like Facebook, X, Instagram, etc., allowing for user creation, posting, and commenting on other posts."
+    },
+    {
+        name: 'Python Newsfeed',
+        techstack: ['Python', 'SQLAlchemy'],
+        url: "https://github.com/Fy50167/python-newsfeed",
+        background: PYTHON,
+        description: "Full-stack blog application that uses python and SQLAlchemy in the backend. Standard blog app where users can create their own posts as well as comment on others."
     }
 ]
     
