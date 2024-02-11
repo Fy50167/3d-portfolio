@@ -5,11 +5,12 @@ import UPWORK from '../assets/images/lumebox.png';
 import CHARACTER from '../assets/images/animated-character.jpeg';
 import PYTHON from '../assets/images/tech-newsfeed.jpeg';
 import CREATOR from '../assets/images/character-creator.jpeg';
+import STOCKERS from '..asets/images/stocker.png';
 
 const projects = [
     {
         name: '3D Character Creator',
-        techstack: ['React Three Fiber, MongoDB, Express'],
+        techstack: ['React Three Fiber', 'MongoDB', 'Express'],
         url: 'https://github.com/Fy50167/character-creator',
         deploy: 'https://my-character-creator-4239e0cc94e4.herokuapp.com',
         background: CREATOR,
@@ -60,6 +61,13 @@ const projects = [
         url: "https://github.com/Fy50167/python-newsfeed",
         background: PYTHON,
         description: "Full-stack blog application that uses python and SQLAlchemy in the backend. Standard blog app where users can create their own posts as well as comment on others."
+    },
+    {
+        name: 'Stock Trader',
+        techstack: ['Handlebars', 'Sequelize'],
+        url: "https://github.com/Fy50167/stock-trader",
+        background: STOCKERS,
+        description: "Full-stack application designed to showcase basic fetch request functionality by simulating an online stock trader. All stcok info taken from the NY Times stock API."
     }
 ]
     
