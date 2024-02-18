@@ -5,7 +5,7 @@ import UPWORK from '../assets/images/lumebox.png';
 import CHARACTER from '../assets/images/animated-character.jpeg';
 import PYTHON from '../assets/images/tech-newsfeed.jpeg';
 import CREATOR from '../assets/images/character-creator.jpeg';
-import STOCKERS from '..asets/images/stocker.png';
+import STOCKERS from '../assets/images/stocker.png';
 
 const projects = [
     {
@@ -14,7 +14,7 @@ const projects = [
         url: 'https://github.com/Fy50167/character-creator',
         deploy: 'https://my-character-creator-4239e0cc94e4.herokuapp.com',
         background: CREATOR,
-        description: 'Full-stack application built with Vite + R3F on the frontend and MongoDB and node.js on the backend. Users can create 3D characters, view community creations, and customize their profile with profile picture and taglines.'
+        description: 'Full-stack application built with R3F and MongoDB. Users can create 3D characters, view community creations, and customize their profile with profile picture and taglines.'
     },
     {
         name: '3D Animated Character',
