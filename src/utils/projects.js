@@ -6,6 +6,7 @@ import CHARACTER from '../assets/images/animated-character.jpeg';
 import PYTHON from '../assets/images/tech-newsfeed.jpeg';
 import CREATOR from '../assets/images/character-creator.jpeg';
 import STOCKERS from '../assets/images/stocker.png';
+import CARS from '../assets/images/car-catalogue.jpeg';
 
 const projects = [
     {
@@ -23,6 +24,14 @@ const projects = [
         deploy: 'https://fy50167.github.io/3d-animated-character/',
         background: CHARACTER,
         description: 'Animated, customizable 3D character built using R3F. Character animations can be swapped with the bottom right controls while camera angles and character colors can be chosen with the top right controls.'
+    },
+    {
+        name: 'Car Catalogue',
+        techstack: ['Next.js', 'TypeScript'],
+        url: 'https://github.com/Fy50167/car-catalogue',
+        deploy: 'https://car-catalogue-eight.vercel.app',
+        background: CARS,
+        description: 'Car browsing application built using Next.js and TypeScript that serves real data from a RapidAPI database. Only uses a stock image since access to image APIs requires paid subscriptions.'
     },
     {
         name: "The Lumebox",
