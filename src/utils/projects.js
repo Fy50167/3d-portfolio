@@ -7,8 +7,17 @@ import PYTHON from '../assets/images/tech-newsfeed.jpeg';
 import CREATOR from '../assets/images/character-creator.jpeg';
 import STOCKERS from '../assets/images/stocker.png';
 import CARS from '../assets/images/car-catalogue.jpeg';
+import THREADS from '../assets/images/threads.jpeg';
 
 const projects = [
+    {
+        name: 'Threads',
+        techstack: ['Next.js', 'TypeScript', 'MongoDB', 'Clerk'],
+        url: 'https://github.com/Fy50167/threads-clone',
+        deploy: 'threads-clone-eight-eta.vercel.app',
+        background: THREADS,
+        description: 'Near-full rebuild of threads using Next.js and MongoDB. Account and community creation functionality is handled via Clerk.'
+    },
     {
         name: '3D Character Creator',
         techstack: ['React Three Fiber', 'MongoDB', 'Express'],
