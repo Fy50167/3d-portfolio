@@ -8,8 +8,17 @@ import CREATOR from '../assets/images/character-creator.jpeg';
 import STOCKERS from '../assets/images/stocker.png';
 import CARS from '../assets/images/car-catalogue.jpeg';
 import THREADS from '../assets/images/threads.jpeg';
+import BRAINWAVE from '../assets/images/brainwave.png';
 
 const projects = [
+    {
+        name: 'Brainwave',
+        techstack: ['React', 'Vite'],
+        url: 'https://github.com/Fy50167/brainwave-website',
+        deploy: 'https://brainwave-website.vercel.app',
+        background: BRAINWAVE,
+        description: 'Extremely robust and sleek design for landing page of a hypothetical AI-based service. Features modernized design choices like parallax and gradients.'
+    },
     {
         name: 'Threads',
         techstack: ['Next.js', 'TypeScript', 'MongoDB', 'Clerk'],
